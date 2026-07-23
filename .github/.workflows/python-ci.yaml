@@ -1,3 +1,4 @@
+name : Python CI Pipeline
 
   build:
     runs-on: ubuntu-latest
