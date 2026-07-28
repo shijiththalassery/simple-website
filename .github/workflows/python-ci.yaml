@@ -28,14 +28,14 @@ jobs:
         echo "role arn : ${{secrets.AWS_ROLE_ARN}}"
         echo "Repository: ${{ github.repository }}"
         echo "Ref: ${{ github.ref }}"
-        
+
     - name: Print GitHub OIDC token claims
       uses: actions/github-script@v7
       with:
         script: |
-          const core = require('@actions/core');
           const idToken = await core.getIDToken('sts.amazonaws.com');
           console.log(idToken);
+
     - name: configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
