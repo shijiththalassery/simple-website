@@ -1,4 +1,4 @@
-name: Build, Push and Deploy and ec2
+name: Build, Push and Deploy
 
 on:
   push:
