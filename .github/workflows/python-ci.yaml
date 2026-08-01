@@ -1,4 +1,4 @@
-name: Build, Push and Deploy updated test
+name: Build, Push and Deploy updated test with ec2
 
 on:
   push:
