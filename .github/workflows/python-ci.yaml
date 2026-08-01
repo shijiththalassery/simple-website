@@ -1,4 +1,4 @@
-name: Build, Push and Deploy updated
+name: Build, Push and Deploy updated test
 
 on:
   push:
