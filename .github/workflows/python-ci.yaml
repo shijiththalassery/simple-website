@@ -66,6 +66,10 @@ jobs:
         username: ${{secrets.EC2_USER}}
         key: ${{secrets.EC2_KEY}}
         script: |
+          aws ecr get-login-password --region us-east-1 \
+          | docker login \
+          --username AWS \
+          --password-stdin 324621154179.dkr.ecr.us-east-1.amazonaws.com
           docker pull ${{steps.login-ecr.outputs.registry}}/${{env.ECR_REPOSITORY}}:${{github.sha}}
           docker stop ${{env.CONTAINER_NAME}} || true
           docker rm ${{env.CONTAINER_NAME}} || true
